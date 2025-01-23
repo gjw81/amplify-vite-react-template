@@ -32,6 +32,18 @@ function App() {
     client.models.Todo.delete({ id })
   }
 
+  Interactions.onComplete({
+    botName: "SBSTrackingBot",
+    callback: (error?: Error, completion?: {[key: string]: any}) => {
+       if (error) {
+          alert(console.log(JSON.stringify(error)));
+       } else if (completion) {
+          console.debug('done: ' + JSON.stringify(completion, null, 2));
+          
+       }
+    }
+  });
+
   return (
     <main>
       <h1>My todos</h1>
