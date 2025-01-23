@@ -8,6 +8,19 @@ import outputs from "../amplify_outputs.json";
 import '@aws-amplify/ui-react/styles.css';
 
 Amplify.configure(outputs);
+Amplify.configure({
+  ...Amplify.getConfig(),
+  Interactions: {
+    LexV2: {
+      'SBSTrackingBot': {
+        aliasId: 'FCUXLPJGPY',
+        botId: 'LOIWYPKXB2',
+        localeId: 'en_GB',
+        region: 'eu-west-1'
+      }
+    }
+  }
+});
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     
