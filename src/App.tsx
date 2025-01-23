@@ -22,8 +22,9 @@ function App() {
     client.models.Todo.create({ content: window.prompt("Todo content") });
     const response = await Interactions.send({
       botName: "SBSTrackingBot",
-      message: 'Hello'
+      message: 'Closest vehicle to Arena'
     });
+    console.log('Reply is: ' + response.messages[0].content);
     console.log(JSON.stringify(response));
   }
 
