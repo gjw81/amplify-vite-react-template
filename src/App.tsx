@@ -21,7 +21,7 @@ function App() {
   async function createTodo() {
     client.models.Todo.create({ content: window.prompt("Todo content") });
     const response = await Interactions.send({
-      botName: "TheBotName",
+      botName: "SBSTrackingBot",
       message: 'Hello'
     });
     console.log(response.message);
