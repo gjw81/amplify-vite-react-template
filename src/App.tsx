@@ -24,7 +24,7 @@ function App() {
       botName: "SBSTrackingBot",
       message: 'Hello'
     });
-    console.log(response.message);
+    console.log(JSON.stringify(response));
   }
 
     
