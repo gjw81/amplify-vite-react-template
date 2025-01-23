@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import type { Schema } from "../amplify/data/resource";
 import { useAuthenticator } from '@aws-amplify/ui-react';
 import { generateClient } from "aws-amplify/data";
+import { Interactions } from '@aws-amplify/interactions';
 
 const client = generateClient<Schema>();
 
@@ -17,8 +18,13 @@ function App() {
     });
   }, []);
 
-  function createTodo() {
+  async function createTodo() {
     client.models.Todo.create({ content: window.prompt("Todo content") });
+    const response = await Interactions.send({
+      botName: "TheBotName",
+      message: 'Hello'
+    });
+    console.log(response.message);
   }
 
     
