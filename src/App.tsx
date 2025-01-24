@@ -4,6 +4,7 @@ import { useAuthenticator } from '@aws-amplify/ui-react';
 import { generateClient } from "aws-amplify/data";
 import { Interactions } from '@aws-amplify/interactions';
 
+
 const client = generateClient<Schema>();
 
 function App() {
@@ -22,8 +23,9 @@ function App() {
     client.models.Todo.create({ content: window.prompt("Todo content") });
     const response = await Interactions.send({
       botName: "SBSTrackingBot",
-      message: 'Closest vehicle to Arena'
+      message: 'Token = garytesttokenstring12345939',      
     });
+  
     console.log('Reply is: ' + response.messages[0].content);
     console.log(JSON.stringify(response));
   }

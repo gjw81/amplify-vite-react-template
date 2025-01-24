@@ -17,6 +17,7 @@ Amplify.configure({
         botId: 'LOIWYPKXB2',
         localeId: 'en_GB',
         region: 'eu-west-1'
+       
       }
     }
   }
